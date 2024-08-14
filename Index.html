@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#317EFB">
+    <title>Calendário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Calendário</h1>
+    </header>
+    <main>
+        <!-- Modal para mostrar detalhes do evento -->
+        <div id="modal" style="display:none;">
+            <div id="modal-content">
+                <span id="close">&times;</span>
+                <h2>Evento</h2>
+                <p id="event-details">Nenhum evento para hoje.</p>
+               
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para adicionar evento -->
+        <div id="event-modal" style="display:none;">
+            <div id="event-modal-content">
+                <span id="event-close">&times;</span>
+                <h2>Adicionar Evento</h2>
+                <form id="event-form">
+                    <label for="event-date">Data:</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                    <label for="event-description">Descrição:</label>
+                    <input type="text" id="event-description" name="event-description" required>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="navegacao">
+            <button id="anterior"><i class="fas fa-chevron-left"></i></button>
+            <span id="mes-ano">Agosto 2024</span>
+            <button id="proximo"><i class="fas fa-chevron-right"></i></button>
+            <button id="add-event"><i class="fas fa-plus"></i> Adicionar Evento</button>
+        </div>        
+        <div class="conteudo">
+            <div class="calendario">
+                <!-- Cabeçalho dos dias da semana -->
+                <div class="dia-nome">Dom</div>
+                <div class="dia-nome">Seg</div>
+                <div class="dia-nome">Ter</div>
+                <div class="dia-nome">Qua</div>
+                <div class="dia-nome">Qui</div>
+                <div class="dia-nome">Sex</div>
+                <div class="dia-nome">Sáb</div>
+
+                <!-- Dias do mês (exemplo com eventos) -->
+                <div class="vazio"></div>
+                <div class="vazio"></div>
+                <div class="vazio"></div>
+                <div class="dia" data-date="2024-08-01" data-event="">1</div>
+                <div class="dia" data-date="2024-08-02" data-event="">2</div>
+                <div class="dia" data-date="2024-08-03" data-event="">3</div>
+                <div class="dia" data-date="2024-08-04" data-event="">4</div>
+                <div class="dia" data-date="2024-08-05" data-event="">5</div>
+                <div class="dia" data-date="2024-08-06" data-event="">6</div>
+                <div class="dia" data-date="2024-08-07" data-event="">7</div>
+                <div class="dia" data-date="2024-08-08" data-event="">8</div>
+                <div class="dia" data-date="2024-08-09" data-event="">9</div>
+                <div class="dia" data-date="2024-08-10" data-event="">10</div>
+                <div class="dia" data-date="2024-08-11" data-event="">11</div>
+                <div class="dia" data-date="2024-08-12" data-event="">12</div>
+                <div class="dia" data-date="2024-08-13" data-event="">13</div>
+                <div class="dia" data-date="2024-08-14" data-event="">14</div>
+                <div class="dia" data-date="2024-08-15" data-event="">15</div>
+                <div class="dia" data-date="2024-08-16" data-event="">16</div>
+                <div class="dia" data-date="2024-08-17" data-event="">17</div>
+                <div class="dia" data-date="2024-08-18" data-event="">18</div>
+                <div class="dia" data-date="2024-08-19" data-event="">19</div>
+                <div class="dia" data-date="2024-08-20" data-event="">20</div>
+                <div class="dia" data-date="2024-08-21" data-event="">21</div>
+                <div class="dia" data-date="2024-08-22" data-event="">22</div>
+                <div class="dia" data-date="2024-08-23" data-event="">23</div>
+                <div class="dia" data-date="2024-08-24" data-event="">24</div>
+                <div class="dia" data-date="2024-08-25" data-event="">25</div>
+                <div class="dia" data-date="2024-08-26" data-event="">26</div>
+                <div class="dia" data-date="2024-08-27" data-event="">27</div>
+                <div class="dia" data-date="2024-08-28" data-event="">28</div>
+                <div class="dia" data-date="2024-08-29" data-event="">29</div>
+                <div class="dia" data-date="2024-08-30" data-event="">30</div>
+                <div class="dia" data-date="2024-08-31" data-event="">31</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Calendário</p>
+        <!-- Caixa de comentários -->
+        <div id="comment-section">
+            <h3>Comentários</h3>
+            <form id="comment-form">
+                <label for="comment-text">Seu comentário:</label>
+                <textarea id="comment-text" name="comment-text" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="comments-list"></div>
+        </div>
+    </footer>
+</body>
+</html>
